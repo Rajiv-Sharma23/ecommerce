@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import mongoDB from "./DB/mongoDB.js";
 import authRoutes from "./Routes/user.routes.js"
+import productRoutes from "./Routes/product.route.js"
 
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/auth",authRoutes);
+app.use("/api/products",productRoutes);
 
 app.listen(process.env.port, () => {
     console.log(`Example app listening on port ${process.env.port}`);
