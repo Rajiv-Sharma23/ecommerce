@@ -6,6 +6,7 @@ import mongoDB from "./DB/mongoDB.js";
 import authRoutes from "./Routes/user.routes.js";
 import productRoutes from "./Routes/product.route.js";
 import cartRoutes from "./Routes/cart.route.js";
+import couponRoutes from "./Routes/coupon.route.js";
 
 const app = express();
 dotenv.config();
@@ -25,6 +26,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth",authRoutes);
 app.use("/api/products",productRoutes);
 app.use("/api/cart",cartRoutes);
+app.use("/api/coupons",couponRoutes);
+// app.use("/api/payments",paymentRoutes);
 
 app.listen(process.env.port, () => {
     console.log(`Example app listening on port ${process.env.port}`);
